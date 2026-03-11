@@ -1,0 +1,129 @@
+.marksheet-card{
+  background:#ffffff;
+  padding:24px;
+  border-radius:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  margin-top:20px;
+}
+
+.marksheet-title{
+  margin-bottom:20px;
+  font-weight:600;
+  color:#333;
+}
+
+.marks-form{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  margin-bottom:18px;
+}
+
+.marks-form input{
+  padding:8px 10px;
+  border:1px solid #ddd;
+  border-radius:6px;
+  font-size:14px;
+}
+
+.marks-form input:focus{
+  outline:none;
+  border-color:#4e73df;
+}
+
+.marks-buttons{
+  grid-column:span 4;
+  margin-top:5px;
+}
+
+.add-btn{
+  background:#4e73df;
+  border:none;
+  color:white;
+  padding:7px 14px;
+  border-radius:6px;
+  cursor:pointer;
+  margin-right:8px;
+}
+
+.add-btn:hover{
+  background:#3d5bcc;
+}
+
+.close-btn{
+  background:#e74a3b;
+  border:none;
+  color:white;
+  padding:7px 14px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.close-btn:hover{
+  background:#c93d2f;
+}
+
+.table-container{
+  overflow-x:auto;
+}
+
+.marks-table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:10px;
+}
+
+.marks-table th{
+  background:#4e73df;
+  color:white;
+  padding:10px;
+  font-weight:500;
+  text-align:left;
+}
+
+.marks-table td{
+  border-bottom:1px solid #eee;
+  padding:8px;
+}
+
+.marks-table tr:hover{
+  background:#f7f9ff;
+}
+
+.marks-summary{
+  margin-top:15px;
+}
+
+.percentage{
+  color:#1cc88a;
+  font-weight:600;
+}
+
+@media (max-width:768px){
+
+  .marks-form{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .marks-buttons{
+    grid-column:span 2;
+  }
+
+}
+
+@media (max-width:480px){
+
+  .marks-form{
+    grid-template-columns:1fr;
+  }
+
+  .marks-buttons{
+    grid-column:span 1;
+  }
+
+  .marks-table th,
+  .marks-table td{
+    font-size:13px;
+  }
+
+}

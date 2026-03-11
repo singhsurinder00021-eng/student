@@ -1,0 +1,105 @@
+.details-container{
+  max-width:1000px;
+  margin:auto;
+  padding:20px;
+}
+
+.marksheet-card{
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  margin-bottom:20px;
+}
+
+.marksheet-title{
+  text-align:center;
+  margin-bottom:20px;
+  color:#333;
+}
+
+.student-info p{
+  margin:5px 0;
+  font-size:16px;
+}
+
+.subject-inputs{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:10px;
+  margin-top:15px;
+}
+
+.subject-inputs input{
+  padding:8px;
+  border:1px solid #ddd;
+  border-radius:6px;
+  transition:0.3s;
+}
+
+.subject-inputs input:focus{
+  border-color:#4e73df;
+  box-shadow:0 0 5px rgba(78,115,223,0.4);
+}
+
+.result-box{
+  margin-top:20px;
+  text-align:center;
+}
+
+.percentage{
+  color:#28a745;
+  font-weight:bold;
+}
+
+.chart-card{
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  margin-bottom:20px;
+}
+
+.action-buttons{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.update-btn{
+  background:#4e73df;
+  color:white;
+  border:none;
+  padding:10px 18px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.pdf-btn{
+  background:#17a2b8;
+  color:white;
+  border:none;
+  padding:10px 18px;
+  border-radius:6px;
+}
+
+.whatsapp-btn{
+  background:#25d366;
+  color:white;
+  border:none;
+  padding:10px 18px;
+  border-radius:6px;
+}
+
+.update-btn:hover{
+  background:#2e59d9;
+}
+
+.pdf-btn:hover{
+  background:#138496;
+}
+
+.whatsapp-btn:hover{
+  background:#1ebe5d;
+}

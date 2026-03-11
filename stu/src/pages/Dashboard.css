@@ -1,0 +1,35 @@
+.dashboard-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg,#f5f7ff,#e9edff);
+  padding: 20px;
+}
+
+.dashboard-content {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.dashboard-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+/* spacing fix */
+.dashboard-card + .dashboard-card {
+  margin-top: 20px;
+}
+
+/* responsive */
+@media (max-width:768px) {
+  .dashboard-card {
+    padding: 15px;
+  }
+}
