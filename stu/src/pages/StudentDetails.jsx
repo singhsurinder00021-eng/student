@@ -12,7 +12,7 @@ export default function StudentDetails() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/students/${id}`)
+     .get(`http://localhost:5000/api/students/${id}`)
       .then((res) => setStudent(res.data));
   }, [id]);
 
@@ -27,10 +27,7 @@ export default function StudentDetails() {
   };
 
   const handleUpdate = async () => {
-    await axios.put(
-      `http://localhost:5000/api/students/${id}`,
-      student
-    );
+   await axios.put(`http://localhost:5000/api/students/${id}`,student);
     alert("Marks Updated");
   };
 
