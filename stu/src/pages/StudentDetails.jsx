@@ -6,13 +6,15 @@ import html2canvas from "html2canvas";
 import MarksChart from "../components/MarksChart";
 import "./StudentDetails.css";
 
+const API_URL = "https://student-rfli.onrender.com/api";
+
 export default function StudentDetails() {
   const { id } = useParams();
   const [student, setStudent] = useState(null);
 
   useEffect(() => {
     axios
-     .get(`http://localhost:5000/api/students/${id}`)
+      .get(`${API_URL}/students/${id}`)
       .then((res) => setStudent(res.data));
   }, [id]);
 
@@ -21,13 +23,13 @@ export default function StudentDetails() {
       ...student,
       subjects: {
         ...student.subjects,
-        [e.target.name]: Number(e.target.value)
-      }
+        [e.target.name]: Number(e.target.value),
+      },
     });
   };
 
   const handleUpdate = async () => {
-   await axios.put(`http://localhost:5000/api/students/${id}`,student);
+    await axios.put(`${API_URL}/students/${id}`, student);
     alert("Marks Updated");
   };
 
@@ -55,9 +57,7 @@ export default function StudentDetails() {
     )}%)`;
 
     window.open(
-      `https://wa.me/${student.whatsapp}?text=${encodeURIComponent(
-        message
-      )}`
+      `https://wa.me/${student.whatsapp}?text=${encodeURIComponent(message)}`
     );
   };
 
@@ -65,8 +65,6 @@ export default function StudentDetails() {
 
   return (
     <div className="details-container">
-
-      {/* Marksheet Card */}
       <div className="marksheet-card" id="marksheet">
 
         <h2 className="marksheet-title">📄 Student Mark Sheet</h2>
@@ -77,38 +75,13 @@ export default function StudentDetails() {
           <p><strong>Class:</strong> {student.className}</p>
         </div>
 
-        {/* Subject Inputs */}
         <div className="subject-inputs">
-          <input
-            name="math"
-            value={student.subjects?.math || ""}
-            onChange={handleChange}
-            placeholder="Math"
-          />
-
-          <input
-            name="english"
-            value={student.subjects?.english || ""}
-            onChange={handleChange}
-            placeholder="English"
-          />
-
-          <input
-            name="science"
-            value={student.subjects?.science || ""}
-            onChange={handleChange}
-            placeholder="Science"
-          />
-
-          <input
-            name="hindi"
-            value={student.subjects?.hindi || ""}
-            onChange={handleChange}
-            placeholder="Hindi"
-          />
+          <input name="math" value={student.subjects?.math || ""} onChange={handleChange} placeholder="Math"/>
+          <input name="english" value={student.subjects?.english || ""} onChange={handleChange} placeholder="English"/>
+          <input name="science" value={student.subjects?.science || ""} onChange={handleChange} placeholder="Science"/>
+          <input name="hindi" value={student.subjects?.hindi || ""} onChange={handleChange} placeholder="Hindi"/>
         </div>
 
-        {/* Result */}
         <div className="result-box">
           <h3>Total: {total} / 400</h3>
           <h3 className="percentage">Percentage: {percentage.toFixed(2)}%</h3>
@@ -116,26 +89,15 @@ export default function StudentDetails() {
 
       </div>
 
-      {/* Chart */}
       <div className="chart-card">
         <MarksChart subjects={student.subjects} />
       </div>
 
-      {/* Buttons */}
       <div className="action-buttons">
-        <button className="update-btn" onClick={handleUpdate}>
-          Update
-        </button>
-
-        <button className="pdf-btn" onClick={downloadPDF}>
-          Download PDF
-        </button>
-
-        <button className="whatsapp-btn" onClick={sendWhatsApp}>
-          Send WhatsApp
-        </button>
+        <button className="update-btn" onClick={handleUpdate}>Update</button>
+        <button className="pdf-btn" onClick={downloadPDF}>Download PDF</button>
+        <button className="whatsapp-btn" onClick={sendWhatsApp}>Send WhatsApp</button>
       </div>
-
     </div>
   );
 }
