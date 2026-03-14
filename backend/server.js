@@ -4,7 +4,7 @@ const cors = require("cors");
 require("dotenv").config();
 const connectDB = require("./config/db");
 
-console.log("JWT_SECRET from env =", process.env.JWT_SECRET); // 👈 ADD THIS
+console.log("JWT_SECRET from env =", process.env.JWT_SECRET); 
 
 const authRoutes = require("./routes/AuthRoutes");
 const studentRoutes = require("./routes/studentRoutes");
